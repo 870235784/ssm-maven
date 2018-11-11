@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tca.dao.IStudentDao">
+	
+	<select id="countBySname" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(1) from t_student t where t.sname = #{sname}	
+	</select>
+	
+	<insert id="insertStudent" parameterType="com.tca.beans.Student">
+		insert into t_student (sname, sage, sgender) values (#{sname}, #{sage}, #{sgender})
+	</insert>
+	
+</mapper>
